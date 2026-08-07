@@ -299,21 +299,29 @@ nav ul.active{
     visibility:visible;
 }
 .menu-btn{
-    width:34px;
+    width:35px;
     height:28px;
     display:none;
     flex-direction:column;
     justify-content:space-between;
+    align-items:center;
     cursor:pointer;
     z-index:1002;
 }
 
+@media(max-width:992px){
+    .menu-btn{
+        display:flex;
+    }
+}
+
 .menu-btn span{
-    width:100%;
+    display:block;
+    width:35px;
     height:3px;
-    background:#fff;
+    background:#ffffff;
     border-radius:5px;
-    transition:.35s ease;
+    transition:all .35s ease;
 }
 
 .menu-btn:hover{
