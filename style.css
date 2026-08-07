@@ -304,30 +304,35 @@ nav ul.active{
     display:none;
     flex-direction:column;
     justify-content:space-between;
-    align-items:center;
     cursor:pointer;
     z-index:1002;
 }
 
-.menu-btn span{
-    display:block;
+@media(max-width:992px){
+    .menu-btn{
+        display:flex;
+    }
+}
+
+.menu-btn .bar{
     width:100%;
     height:3px;
     background:#fff;
-    border-radius:10px;
-    transform-origin:center;
-    transition:transform .3s ease, opacity .3s ease;
+    border-radius:50px;
+    transition:all .35s ease;
 }
 
-.menu-btn.open span:nth-child(1){
+/* Animation */
+
+.menu-btn.open .bar:nth-child(1){
     transform:translateY(10px) rotate(45deg);
 }
 
-.menu-btn.open span:nth-child(2){
+.menu-btn.open .bar:nth-child(2){
     opacity:0;
 }
 
-.menu-btn.open span:nth-child(3){
+.menu-btn.open .bar:nth-child(3){
     transform:translateY(-10px) rotate(-45deg);
 }
 .menu-btn:hover{
