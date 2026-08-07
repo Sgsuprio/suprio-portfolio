@@ -275,6 +275,8 @@ nav ul li a:hover{
 .hero-buttons,
 .social-links{
     justify-content:center;
+}
+
 nav ul{
     display:none;
 }
