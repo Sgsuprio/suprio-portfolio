@@ -324,6 +324,18 @@ nav ul.active{
     transition:all .35s ease;
 }
 
+.menu-btn.open span:nth-child(1){
+    transform:translateY(12px) rotate(45deg);
+}
+
+.menu-btn.open span:nth-child(2){
+    opacity:0;
+}
+
+.menu-btn.open span:nth-child(3){
+    transform:translateY(-12px) rotate(-45deg);
+}
+
 .menu-btn:hover{
     transform:rotate(90deg);
 }
