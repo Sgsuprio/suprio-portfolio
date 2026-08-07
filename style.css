@@ -267,9 +267,6 @@ nav ul li a:hover{
 .hero-right img{
     width:320px;
     max-width:100%;
-    border-radius:50%;
-    border:5px solid #3B82F6;
-    box-shadow:0 0 35px rgba(59,130,246,.5);
 }
 
 .hero-buttons,
@@ -285,14 +282,13 @@ nav ul.active{
     display:flex;
     flex-direction:column;
     position:absolute;
-    top:80px;
+    top:85px;
     right:20px;
     width:220px;
     background:#111827;
     padding:20px;
     border-radius:12px;
     gap:15px;
-    z-index:1001;
 }
 
 .menu-btn{
@@ -301,6 +297,10 @@ nav ul.active{
 
 .logo h2{
     font-size:22px;
+}
+
+.resume-btn{
+    display:none;
 }
 
 }
