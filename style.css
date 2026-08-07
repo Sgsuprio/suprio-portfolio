@@ -275,20 +275,21 @@ nav ul li a:hover{
 }
 
 nav ul{
-    display:none;
-}
-
-nav ul.active{
     display:flex;
     flex-direction:column;
     position:absolute;
     top:85px;
-    right:20px;
+    right:-260px;
     width:220px;
     background:#111827;
     padding:20px;
     border-radius:12px;
     gap:15px;
+    transition:right .35s ease;
+}
+
+nav ul.active{
+    right:20px;
 }
 
 .menu-btn{
