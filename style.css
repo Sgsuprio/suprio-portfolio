@@ -299,7 +299,14 @@ nav ul.active{
     visibility:visible;
 }
 .menu-btn{
-    display:block;
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    transition:transform .3s ease;
+}
+
+.menu-btn:hover{
+    transform:rotate(90deg);
 }
 
 .logo h2{
