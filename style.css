@@ -297,7 +297,8 @@ nav ul.active{
 }
 
 .logo h2{
-    font-size:22px;
+    font-size:20px;
+    white-space: nowrap;
 }
 
 .resume-btn{
