@@ -6,8 +6,8 @@ menuBtn.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
-document.querySelectorAll(".nav-links a").forEach(link=>{
-    link.addEventListener("click",()=>{
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
         menuBtn.classList.remove("open");
         navLinks.classList.remove("active");
     });
