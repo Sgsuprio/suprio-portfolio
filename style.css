@@ -253,7 +253,8 @@ nav ul li a:hover{
 .hero{
     flex-direction:column-reverse;
     text-align:center;
-    padding-top:120px;
+    padding-top:90px;
+    gap:45px;
 }
 
 .hero-left h1{
