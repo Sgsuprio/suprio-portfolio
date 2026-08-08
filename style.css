@@ -257,6 +257,10 @@ nav ul li a:hover{
     gap:45px;
 }
 
+.hero-left h4{
+    font-size:20px;
+}
+
 .hero-left h1{
     font-size:52px;
 }
