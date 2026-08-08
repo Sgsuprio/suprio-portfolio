@@ -1044,3 +1044,19 @@ SKILLS
     }
 
 }
+/* =================================
+   ABOUT → EXPERIENCE SPACING
+================================= */
+
+@media (max-width: 600px) {
+
+    #experience {
+        padding-top: 35px;
+        margin-top: 0;
+    }
+
+    #experience .section-title {
+        margin-bottom: 40px;
+    }
+
+}
