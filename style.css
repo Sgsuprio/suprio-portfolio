@@ -955,3 +955,40 @@ SKILLS
         font-size: 14px;
     }
 }
+@media (max-width: 600px) {
+
+    .about {
+        padding: 55px 6% 70px;
+    }
+
+    .section-title {
+        margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    .about-text h3 {
+        font-size: 29px;
+        line-height: 1.2;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .about-stats {
+        gap: 14px;
+    }
+
+    .stat-card {
+        min-height: 120px;
+        padding: 22px 10px;
+    }
+
+    .stat-card h3 {
+        font-size: 32px;
+    }
+}
