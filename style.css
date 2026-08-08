@@ -1013,3 +1013,18 @@ SKILLS
         overflow: hidden;
     }
 }
+/* =================================
+   CLEAN HERO → ABOUT TRANSITION
+================================= */
+
+@media (max-width: 600px) {
+
+    .about {
+        padding-top: 35px;
+    }
+
+    .about .section-title {
+        margin-top: 0;
+    }
+
+}
