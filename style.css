@@ -715,7 +715,7 @@ SKILLS
 ========================== */
 
 .contact{
-    padding:100px 8%;
+    padding:80px 8% 50px;
 }
 
 .contact-container{
@@ -768,7 +768,7 @@ SKILLS
 
 .footer{
     background:#060d18;
-    padding:70px 8%;
+    padding:70px 8% 30px;
     text-align:center;
     border-top:1px solid rgba(59,130,246,.15);
 }
