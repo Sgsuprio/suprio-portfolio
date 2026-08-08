@@ -992,3 +992,24 @@ SKILLS
         font-size: 32px;
     }
 }
+/* =================================
+   MOBILE SECTION SPACING
+================================= */
+
+@media (max-width: 600px) {
+
+    /* Cleaner end of About section */
+    .about {
+        padding-bottom: 45px;
+    }
+
+    /* Bring Experience closer to About */
+    #experience {
+        padding-top: 55px;
+    }
+
+    /* Keep previous section content contained */
+    .hero {
+        overflow: hidden;
+    }
+}
