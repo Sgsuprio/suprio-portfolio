@@ -338,9 +338,6 @@ nav ul.active{
 .menu-btn.open .bar:nth-child(3){
     transform:translateY(-10px) rotate(-45deg);
 }
-.menu-btn:hover{
-    transform:rotate(90deg);
-}
 
 .logo h2{
     font-size:20px;
