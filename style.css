@@ -182,7 +182,8 @@ section[id],footer[id]{scroll-margin-top:90px;}
 /* "Open to Work" tab in the reference site's style: hanging tab flush with
    the top edge, #222 background, sentence-case text, solid blue dot. */
 .status-pill{
-    background:#222;
+    position:relative;
+    background:transparent;
     border:none;
     border-radius:0 0 20px 20px;
     font-size:13px;
@@ -190,8 +191,19 @@ section[id],footer[id]{scroll-margin-top:90px;}
     letter-spacing:0;
     text-transform:none;
     padding:10px 24px;
+    overflow:hidden;
 }
-.status-pill:hover{background:#222;}
+/* Tapered tab background (reference site's shape): wider at the top,
+   narrowing toward the bottom; the button's rounded corners clip it. */
+.status-pill::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:#222;
+    clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,12px 100%);
+    z-index:-1;
+}
+.status-pill:hover{background:transparent;}
 .status-pill .dot{background:#1754B6;animation:none;}
 .chev{
     width:0;height:0;
@@ -1072,8 +1084,9 @@ button:focus-visible{
 }
 
 @media (max-width:600px){
-    .site-header{padding:14px 16px;grid-template-columns:1fr auto auto;column-gap:10px;}
-    .header-contact{margin-top:-14px;}
+    .site-header{padding:0 16px 14px;grid-template-columns:1fr;row-gap:14px;}
+    .header-left{display:none;}
+    .header-contact{margin-top:0;justify-self:center;}
     .status-pill,.menu-pill{padding:10px 14px;font-size:12px;}
     .status-pill{padding:10px 20px;}
     .hero{padding:120px 6% 70px;}
