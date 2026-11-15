@@ -250,13 +250,14 @@ section[id],footer[id]{scroll-margin-top:90px;}
     background:#111;
     z-index:1100;
     transform:translateX(105%);
-    transition:transform .45s cubic-bezier(.22,1,.36,1);
+    transition:transform .55s cubic-bezier(.22,1,.36,1);
     padding:28px 40px 32px;
     display:flex;
     flex-direction:column;
     border-radius:28px;
     box-shadow:0 24px 60px rgba(0,0,0,.45);
     overflow-y:auto;
+    will-change:transform;
 }
 .menu-panel.open{transform:translateX(0);}
 
@@ -307,6 +308,24 @@ section[id],footer[id]{scroll-margin-top:90px;}
     transition:background .25s ease;
 }
 .menu-links a:hover{background:#262626;color:#fff;}
+
+/* Lively menu entrance: panel content cascades in one by one */
+@keyframes menuLinkIn{
+    from{opacity:0;transform:translateY(22px);}
+    to{opacity:1;transform:none;}
+}
+.menu-panel.open .menu-panel-top,
+.menu-panel.open .menu-resume,
+.menu-panel.open .menu-socials{animation:menuLinkIn .5s ease backwards;}
+.menu-panel.open .menu-links a{animation:menuLinkIn .5s cubic-bezier(.22,1,.36,1) backwards;}
+.menu-panel.open .menu-links a:nth-child(1){animation-delay:.06s;}
+.menu-panel.open .menu-links a:nth-child(2){animation-delay:.12s;}
+.menu-panel.open .menu-links a:nth-child(3){animation-delay:.18s;}
+.menu-panel.open .menu-links a:nth-child(4){animation-delay:.24s;}
+.menu-panel.open .menu-links a:nth-child(5){animation-delay:.30s;}
+.menu-panel.open .menu-links a:nth-child(6){animation-delay:.36s;}
+.menu-panel.open .menu-resume{animation-delay:.42s;}
+.menu-panel.open .menu-socials{animation-delay:.48s;}
 
 .menu-resume{
     margin-top:28px;
