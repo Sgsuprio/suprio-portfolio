@@ -156,7 +156,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
 .site-header > *{pointer-events:auto;}
 .header-left{width:1px;}
 
-.header-contact{position:relative;transition:opacity .3s ease,transform .3s ease;}
+.header-contact{position:relative;transition:opacity .3s ease,transform .3s ease;margin-top:-18px;}
 .header-contact.hide{opacity:0;pointer-events:none;transform:translateY(-8px);}
 .status-pill,
 .menu-pill{
@@ -176,9 +176,23 @@ section[id],footer[id]{scroll-margin-top:90px;}
     font-family:'Manrope',sans-serif;
     transition:background .3s ease;
 }
-.status-pill:hover,
 .menu-pill:hover{background:var(--blue);}
 .menu-pill{justify-self:end;}
+
+/* "Open to Work" tab in the reference site's style: hanging tab flush with
+   the top edge, #222 background, sentence-case text, solid blue dot. */
+.status-pill{
+    background:#222;
+    border:none;
+    border-radius:0 0 20px 20px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0;
+    text-transform:none;
+    padding:10px 24px;
+}
+.status-pill:hover{background:#222;}
+.status-pill .dot{background:#1754B6;animation:none;}
 .chev{
     width:0;height:0;
     border-left:5px solid transparent;
@@ -198,14 +212,14 @@ section[id],footer[id]{scroll-margin-top:90px;}
 
 .contact-dropdown{
     position:absolute;
-    top:calc(100% + 12px);
+    top:calc(100% + 10px);
     left:50%;
     transform:translate(-50%,8px);
-    background:#000;
-    border:1px solid rgba(255,255,255,.14);
+    background:#222;
+    border:none;
     border-radius:16px;
     padding:8px;
-    min-width:250px;
+    min-width:220px;
     opacity:0;
     pointer-events:none;
     transition:opacity .3s ease,transform .3s ease;
@@ -226,6 +240,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     transition:background .25s ease;
 }
 .contact-dropdown a:hover{background:rgba(255,255,255,.08);}
+.contact-dropdown a:nth-child(2){color:var(--blue-soft);}
 
 /* ===========================
    SLIDE-IN MENU PANEL
@@ -1058,7 +1073,9 @@ button:focus-visible{
 
 @media (max-width:600px){
     .site-header{padding:14px 16px;grid-template-columns:1fr auto auto;column-gap:10px;}
+    .header-contact{margin-top:-14px;}
     .status-pill,.menu-pill{padding:10px 14px;font-size:12px;}
+    .status-pill{padding:10px 20px;}
     .hero{padding:120px 6% 70px;}
     .hero h1{font-size:44px;}
     .h1-oval{width:52px;height:30px;}
