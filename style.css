@@ -80,6 +80,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     margin-bottom:48px;
 }
 .section-title h2{
+    font-family:'Space Grotesk',sans-serif;
     font-size:64px;
     font-weight:800;
     letter-spacing:-.02em;
@@ -657,6 +658,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     text-align:center;
 }
 .intro-text{
+    font-family:'Space Grotesk',sans-serif;
     font-size:56px;
     font-weight:500;
     line-height:1.25;
@@ -700,6 +702,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
 }
 .stat-card:hover{transform:translateY(-6px);border-color:var(--blue);}
 .stat-card h3{
+    font-family:'Space Grotesk',sans-serif;
     font-size:clamp(28px,3.4vw,48px);
     font-weight:800;
     color:var(--blue);
@@ -737,6 +740,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     color:var(--blue);
 }
 .wide-card h3{
+    font-family:'Space Grotesk',sans-serif;
     font-size:24px;
     font-weight:700;
     margin-top:14px;
@@ -948,7 +952,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     padding:44px 28px;
 }
 .contact-card.feature h3{font-size:26px;}
-.contact-card h3{font-size:22px;margin-bottom:12px;}
+.contact-card h3{font-family:'Space Grotesk',sans-serif;font-size:22px;margin-bottom:12px;}
 .contact-card p{color:var(--body-dark);margin-bottom:24px;word-break:break-word;}
 .contact-card a{
     display:inline-block;
@@ -967,7 +971,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     padding-top:44px;
     border-top:1px solid rgba(255,255,255,.08);
 }
-.footer-bottom h2{font-size:40px;color:var(--blue);}
+.footer-bottom h2{font-family:'Space Grotesk',sans-serif;font-size:40px;color:var(--blue);}
 .footer-bottom > p{margin-top:12px;color:var(--muted-dark);}
 .footer-socials{
     display:flex;
