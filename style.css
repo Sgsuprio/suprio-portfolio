@@ -1095,3 +1095,102 @@ SKILLS
         margin-bottom:45px;
     }
 }
+
+/* ===========================
+   UI/UX PASS — 15 Nov 2026
+   (scroll-reveal, active nav, skill-bar
+   animation, back-to-top, hero glow,
+   anchor offset, keyboard focus)
+=========================== */
+
+/* Anchor offset so the fixed header never covers a section title */
+section[id]{
+    scroll-margin-top:90px;
+}
+
+/* Small accent bar under section titles */
+.section-title h2::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:4px;
+    margin:14px auto 0;
+    border-radius:4px;
+    background:#3B82F6;
+}
+
+/* Soft blue glow behind the hero, matching the portrait ring */
+.hero{
+    position:relative;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(600px 400px at 75% 30%, rgba(59,130,246,.18), transparent 70%);
+    pointer-events:none;
+}
+
+/* Scroll-reveal (class is added by JS, so no-JS still shows everything) */
+.reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .7s ease, transform .7s ease;
+}
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+@media (prefers-reduced-motion: reduce){
+    .reveal{
+        opacity:1;
+        transform:none;
+        transition:none;
+    }
+}
+
+/* Skill bars grow when scrolled into view */
+.skill-fill{
+    transition:width 1.1s ease;
+}
+
+/* Highlight the nav link for the section on screen */
+.nav-links a.active{
+    color:#3B82F6;
+}
+
+/* Clear keyboard focus for links and buttons */
+a:focus-visible,
+button:focus-visible{
+    outline:2px solid #3B82F6;
+    outline-offset:3px;
+}
+
+/* Back-to-top button */
+#backToTop{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:#3B82F6;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(12px);
+    transition:opacity .3s ease, transform .3s ease, background .3s ease;
+    z-index:1001;
+    box-shadow:0 8px 25px rgba(59,130,246,.45);
+}
+#backToTop.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:none;
+}
+#backToTop:hover{
+    background:#2563eb;
+}
