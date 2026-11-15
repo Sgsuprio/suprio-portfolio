@@ -629,7 +629,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     height:1px;
     background:linear-gradient(90deg,transparent,rgba(18,108,253,.55),transparent);
 }
-.dark-band section:nth-of-type(even){background:#0E0E12;}
+.dark-band section:nth-of-type(even){background:#15151B;}
 
 /* ---------- INTRO / ABOUT ---------- */
 .intro{
@@ -948,7 +948,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     padding-top:44px;
     border-top:1px solid rgba(255,255,255,.08);
 }
-.footer-bottom h2{font-size:32px;color:var(--blue);}
+.footer-bottom h2{font-size:40px;color:var(--blue);}
 .footer-bottom > p{margin-top:12px;color:var(--muted-dark);}
 .footer-socials{
     display:flex;
