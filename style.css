@@ -1057,8 +1057,8 @@ button:focus-visible{
 }
 
 @media (max-width:600px){
-    .header-contact{display:none;}
-    .site-header{padding:14px 16px;grid-template-columns:1fr auto;}
+    .site-header{padding:14px 16px;grid-template-columns:1fr auto auto;column-gap:10px;}
+    .status-pill,.menu-pill{padding:10px 14px;font-size:12px;}
     .hero{padding:120px 6% 70px;}
     .hero h1{font-size:44px;}
     .h1-oval{width:52px;height:30px;}
