@@ -1053,7 +1053,7 @@ button:focus-visible{
 
 @media (max-width:600px){
     .header-contact{display:none;}
-    .site-header{padding:14px 16px;}
+    .site-header{padding:14px 16px;grid-template-columns:1fr auto;}
     .hero{padding:120px 6% 70px;}
     .hero h1{font-size:44px;}
     .h1-oval{width:52px;height:30px;}
@@ -1075,7 +1075,7 @@ button:focus-visible{
     .timeline-content{padding:22px;}
     .contact-grid{grid-template-columns:1fr;}
     .contact-card.feature{grid-column:span 1;}
-    .menu-panel{width:92vw;border-radius:0;}
+    .menu-panel{top:12px;right:16px;}
     .menu-links a{font-size:22px;}
 }
 
