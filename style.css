@@ -244,7 +244,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     background:#000;
     z-index:1100;
     transform:translateX(105%);
-    transition:transform .45s cubic-bezier(.22,1,.36,1);
+    transition:transform .55s cubic-bezier(.22,1,.36,1);
     padding:28px;
     display:flex;
     flex-direction:column;
@@ -269,7 +269,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     border-radius:50%;
     object-fit:cover;
 }
-.menu-brand h2{font-size:20px;font-weight:700;color:#fff;}
+.menu-brand h2{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#fff;}
 .menu-brand span{font-size:13px;color:var(--muted-dark);}
 .menu-close{
     width:42px;height:42px;
@@ -292,14 +292,15 @@ section[id],footer[id]{scroll-margin-top:90px;}
 }
 .menu-links a{
     color:#fff;
-    font-size:24px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:26px;
     font-weight:700;
     letter-spacing:-.01em;
     padding:10px 0;
     display:flex;
     align-items:center;
     gap:12px;
-    transition:color .25s ease;
+    transition:color .25s ease,transform .3s ease;
 }
 .menu-links a::before{
     content:"";
@@ -310,9 +311,27 @@ section[id],footer[id]{scroll-margin-top:90px;}
     transition:opacity .25s ease;
     flex-shrink:0;
 }
-.menu-links a:hover{color:var(--blue-soft);}
+.menu-links a:hover{color:var(--blue-soft);transform:translateX(8px);}
 .menu-links a.active{color:var(--blue-soft);}
 .menu-links a.active::before{opacity:1;}
+
+/* Lively menu entrance: panel content cascades in one by one */
+@keyframes menuLinkIn{
+    from{opacity:0;transform:translateY(22px);}
+    to{opacity:1;transform:none;}
+}
+.menu-panel.open .menu-panel-top,
+.menu-panel.open .menu-resume,
+.menu-panel.open .menu-socials{animation:menuLinkIn .5s ease backwards;}
+.menu-panel.open .menu-links a{animation:menuLinkIn .5s cubic-bezier(.22,1,.36,1) backwards;}
+.menu-panel.open .menu-links a:nth-child(1){animation-delay:.06s;}
+.menu-panel.open .menu-links a:nth-child(2){animation-delay:.12s;}
+.menu-panel.open .menu-links a:nth-child(3){animation-delay:.18s;}
+.menu-panel.open .menu-links a:nth-child(4){animation-delay:.24s;}
+.menu-panel.open .menu-links a:nth-child(5){animation-delay:.30s;}
+.menu-panel.open .menu-links a:nth-child(6){animation-delay:.36s;}
+.menu-panel.open .menu-resume{animation-delay:.42s;}
+.menu-panel.open .menu-socials{animation-delay:.48s;}
 
 .menu-resume{
     margin-top:28px;
