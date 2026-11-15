@@ -43,6 +43,22 @@ if (contactBtn) {
     });
 }
 
+// Hide the centred header pill while scrolling down so it never
+// covers page content; it comes back as soon as you scroll up.
+// (The Menu pill stays visible so navigation is always reachable.)
+let lastScrollY = window.scrollY;
+window.addEventListener("scroll", function () {
+    if (!headerContact) return;
+    const y = window.scrollY;
+    if (y > 140 && y > lastScrollY) {
+        headerContact.classList.add("hide");
+        closeContactDropdown();
+    } else {
+        headerContact.classList.remove("hide");
+    }
+    lastScrollY = y;
+}, { passive: true });
+
 // ===========================
 // Slide-in menu panel
 // ===========================

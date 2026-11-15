@@ -149,7 +149,8 @@ section[id],footer[id]{scroll-margin-top:90px;}
 .site-header > *{pointer-events:auto;}
 .header-left{width:1px;}
 
-.header-contact{position:relative;}
+.header-contact{position:relative;transition:opacity .3s ease,transform .3s ease;}
+.header-contact.hide{opacity:0;pointer-events:none;transform:translateY(-8px);}
 .status-pill,
 .menu-pill{
     background:#000;
