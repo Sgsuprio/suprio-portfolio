@@ -1,27 +1,36 @@
 // ===========================
-// Mobile menu
+// Slide-in menu panel
 // ===========================
-const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
+const menuBtn = document.querySelector("#menuBtn");
+const menuPanel = document.querySelector("#menuPanel");
+const menuOverlay = document.querySelector("#menuOverlay");
+const menuClose = document.querySelector("#menuClose");
 
-menuBtn.onclick = function () {
-    menuBtn.classList.toggle("open");
-    navLinks.classList.toggle("active");
-};
+function openMenu() {
+    menuPanel.classList.add("open");
+    menuOverlay.classList.add("open");
+    menuBtn.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+}
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.onclick = function () {
-        menuBtn.classList.remove("open");
-        navLinks.classList.remove("active");
-    };
+function closeMenu() {
+    menuPanel.classList.remove("open");
+    menuOverlay.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+}
+
+menuBtn.onclick = openMenu;
+menuClose.onclick = closeMenu;
+menuOverlay.onclick = closeMenu;
+
+document.querySelectorAll(".menu-links a").forEach(link => {
+    link.onclick = closeMenu;
 });
 
-// Close the mobile menu with the Escape key
+// Close the menu with the Escape key
 document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-        menuBtn.classList.remove("open");
-        navLinks.classList.remove("active");
-    }
+    if (e.key === "Escape") closeMenu();
 });
 
 // ===========================
@@ -30,7 +39,7 @@ document.addEventListener("keydown", function (e) {
 //  everything normally if JS fails to load)
 // ===========================
 const revealItems = document.querySelectorAll(
-    "section:not(.hero), .project-card, .skill-card, .stat-card, .contact-card, .timeline-item"
+    "section:not(.hero), footer, .project-card, .skill-card, .stat-card, .contact-card, .timeline-item, .wide-card"
 );
 revealItems.forEach(el => el.classList.add("reveal"));
 
@@ -43,6 +52,28 @@ const revealObserver = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.1 });
 revealItems.forEach(el => revealObserver.observe(el));
+
+// ===========================
+// Intro paragraph: words turn white one by one as it scrolls in
+// ===========================
+const introText = document.querySelector("#introText");
+if (introText) {
+    const words = introText.textContent.trim().split(/\s+/);
+    introText.innerHTML = words.map(w => `<span class="w">${w}</span>`).join(" ");
+    const wordSpans = introText.querySelectorAll(".w");
+    const introObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                wordSpans.forEach((span, i) => {
+                    span.style.transitionDelay = (i * 35) + "ms";
+                    span.classList.add("on");
+                });
+                introObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+    introObserver.observe(introText);
+}
 
 // ===========================
 // Skill bars: grow from 0 to their level when Skills scrolls into view
@@ -68,14 +99,14 @@ if (skillsSection) {
 }
 
 // ===========================
-// Active nav link: highlight the section currently on screen
+// Active menu link: highlight the section currently on screen
 // ===========================
-const pageSections = document.querySelectorAll("section[id]");
-const navAnchors = document.querySelectorAll(".nav-links a");
+const pageSections = document.querySelectorAll("section[id], footer[id]");
+const menuAnchors = document.querySelectorAll(".menu-links a");
 const navObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            navAnchors.forEach(a => {
+            menuAnchors.forEach(a => {
                 a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id);
             });
         }

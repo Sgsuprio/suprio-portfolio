@@ -15,203 +15,200 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-
-<nav class="navbar">
-
-<div class="logo">
-
-<img src="assets/logo/CryptoNexLabsLogo.png" alt="Logo">
-
-<div>
-
-<h2>Suprio Ghosh</h2>
-
-<span>CryptoNexLabs</span>
-
-</div>
-
-</div>
-
-<ul class="nav-links">
-
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-<a href="assets/resume/Suprio_Ghosh_Resume.pdf"
-   class="resume-btn"
-   target="_blank">
-   Resume
-</a>
-
-<div class="menu-btn">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-</div>
-
-</nav>
-
+<!-- Floating header: status pill + menu pill -->
+<header class="site-header">
+    <a class="status-pill" href="#contact"><span class="dot"></span> Open to Work</a>
+    <button class="menu-pill" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu <span class="dot"></span></button>
 </header>
 
-<section class="hero">
-
-<div class="hero-left">
-
-<h4>
-
-WELCOME TO MY PORTFOLIO
-
-</h4>
-
-<h1>
-
-Hi, I'm
-
-<span>Suprio Ghosh</span>
-
-</h1>
-
-<h2>
-
-Building Thriving Web3 Communities
-
-</h2>
-
-<p>
-
-Helping Web3 projects grow through community management,
-moderation, ambassador programs and strategic content creation.
-
-</p>
-
-<p class="availability">🟢 Open to work · West Bengal, India · Remote</p>
-
-<div class="hero-buttons">
-
-<a href="#contact" class="btn">
-Hire Me
-</a>
-
-<a href="assets/resume/Suprio_Ghosh_Resume.pdf"
-   class="secondary-btn"
-   target="_blank"
-   download>
-   Download Resume
-</a>
-
-</div>
-
-<div class="social-links">
-
-<a href="https://x.com/CryptoNexLabs" target="_blank">X</a>
-
-<a href="https://github.com/Sgsuprio" target="_blank">GitHub</a>
-
-<a href="https://discord.com/" target="_blank">Discord</a>
-
-<a href="https://t.me/Suprio7319" target="_blank">Telegram</a>
-
-<a href="https://www.linkedin.com/in/suprio-ghosh-05aa50192" target="_blank">LinkedIn</a>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<img src="assets/profile/profile.jpg" alt="Suprio Ghosh">
-
-</div>
-
-</section>
-<section id="about" class="about">
-
-    <div class="section-title">
-        <h2>About Me</h2>
-        <p>Who I am & What I do</p>
+<!-- Slide-in menu panel -->
+<div class="menu-overlay" id="menuOverlay"></div>
+<aside class="menu-panel" id="menuPanel" aria-label="Site menu">
+    <div class="menu-panel-top">
+        <div class="menu-brand">
+            <img src="assets/logo/CryptoNexLabsLogo.png" alt="CryptoNexLabs logo">
+            <div>
+                <h2>Suprio Ghosh</h2>
+                <span>CryptoNexLabs</span>
+            </div>
+        </div>
+        <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
     </div>
 
-    <div class="about-content">
+    <nav class="menu-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-        <div class="about-text">
+    <a class="menu-resume" href="assets/resume/Suprio_Ghosh_Resume.pdf" target="_blank">Download Resume</a>
 
-            <h3>Helping Web3 Projects Build Engaged Communities</h3>
+    <div class="menu-socials">
+        <span>Social Network</span>
+        <div>
+            <a href="https://x.com/CryptoNexLabs" target="_blank">X</a>
+            <a href="https://github.com/Sgsuprio" target="_blank">GitHub</a>
+            <a href="https://t.me/Suprio7319" target="_blank">Telegram</a>
+            <a href="https://www.linkedin.com/in/suprio-ghosh-05aa50192" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</aside>
 
-            <p>
-                I'm Suprio Ghosh, a Web3 Community Manager with 3+ years of experience helping blockchain projects grow through community management, moderation, ambassador programs, content creation, and user engagement. My goal is to create active, trusted, and long-term communities that support project success.
-            </p>
+<main>
 
-            <p>
-                I enjoy creating active communities, organizing campaigns,
-                supporting users, and building long-term relationships between
-                projects and their members.
-            </p>
+<!-- ============ LIGHT BAND: hero + collaborations ============ -->
+<div class="light-band">
 
+<section class="hero" id="home">
+    <div class="hero-left">
+        <span class="hero-eyebrow">Welcome to my portfolio</span>
+
+        <h1>Building Thriving <span class="script">Web3</span> Communities</h1>
+
+        <p class="hero-sub">
+            Helping Web3 projects grow through community management,
+            moderation, ambassador programs and strategic content creation.
+        </p>
+
+        <p class="hero-location">West Bengal, India &middot; Remote</p>
+
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Hire Me <span class="btn-arrow">&rarr;</span></a>
+            <a href="assets/resume/Suprio_Ghosh_Resume.pdf" class="btn-secondary" target="_blank" download>Download Resume</a>
         </div>
 
-        <div class="about-stats">
-
-            <div class="stat-card">
-                <h3>3+</h3>
-                <p>Years Experience</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>Discord & Telegram</h3>
-                <p>Community Management</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>20+</h3>
-                <p>Web3 Projects</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>Content Creation</h3>
-                <p>Web3 Threads & Posts</p>
-            </div>
-
+        <div class="hero-socials">
+            <a href="https://x.com/CryptoNexLabs" target="_blank">X</a>
+            <a href="https://github.com/Sgsuprio" target="_blank">GitHub</a>
+            <a href="https://discord.com/" target="_blank">Discord</a>
+            <a href="https://t.me/Suprio7319" target="_blank">Telegram</a>
+            <a href="https://www.linkedin.com/in/suprio-ghosh-05aa50192" target="_blank">LinkedIn</a>
         </div>
-
     </div>
 
+    <div class="hero-right">
+        <div class="portrait-frame">
+            <img src="assets/profile/profile.jpg" alt="Suprio Ghosh">
+        </div>
+        <p class="portrait-name">Suprio Ghosh</p>
+        <p class="portrait-tag">#CryptoNexLabs</p>
+    </div>
 </section>
-<section id="experience" class="experience">
 
+<section class="collabs">
+    <h2>Top Collaborations</h2>
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="chip"><span class="chip-tile" style="--c:#126CFD">AP</span>Alchemy Pay</span>
+            <span class="chip"><span class="chip-tile" style="--c:#0E6F84">CR</span>Cronos</span>
+            <span class="chip"><span class="chip-tile" style="--c:#7C3AED">XI</span>XION</span>
+            <span class="chip"><span class="chip-tile" style="--c:#D97706">RO</span>Rootstock</span>
+            <span class="chip"><span class="chip-tile" style="--c:#059669">HE</span>Hedra</span>
+            <span class="chip"><span class="chip-tile" style="--c:#DB2777">DZ</span>DoubleZero</span>
+            <span class="chip"><span class="chip-tile" style="--c:#2563EB">SA</span>Sahara AI</span>
+            <span class="chip"><span class="chip-tile" style="--c:#0891B2">MI</span>Mitosis</span>
+            <span class="chip"><span class="chip-tile" style="--c:#65A30D">OL</span>OpenLedger</span>
+            <span class="chip"><span class="chip-tile" style="--c:#DC2626">PH</span>Pharos</span>
+            <span class="chip"><span class="chip-tile" style="--c:#4F46E5">SO</span>Somnia</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#126CFD">AP</span>Alchemy Pay</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#0E6F84">CR</span>Cronos</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#7C3AED">XI</span>XION</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#D97706">RO</span>Rootstock</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#059669">HE</span>Hedra</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#DB2777">DZ</span>DoubleZero</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#2563EB">SA</span>Sahara AI</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#0891B2">MI</span>Mitosis</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#65A30D">OL</span>OpenLedger</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#DC2626">PH</span>Pharos</span>
+            <span class="chip" aria-hidden="true"><span class="chip-tile" style="--c:#4F46E5">SO</span>Somnia</span>
+        </div>
+    </div>
+</section>
+
+</div><!-- /light-band -->
+
+<!-- ============ DARK BAND ============ -->
+<div class="dark-band">
+
+<section class="intro" id="about">
+    <div class="section-eyebrow">About</div>
+
+    <p class="intro-text" id="introText">I&rsquo;m Suprio Ghosh, a Web3 Community Manager with 3+ years of experience helping blockchain projects grow through community management, moderation, ambassador programs, content creation, and user engagement. My goal is to create active, trusted, and long-term communities that support project success.</p>
+
+    <p class="intro-sub">
+        I enjoy creating active communities, organizing campaigns,
+        supporting users, and building long-term relationships between
+        projects and their members.
+    </p>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>3+</h3>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat-card">
+            <h3>Discord &amp; Telegram</h3>
+            <p>Community Management</p>
+        </div>
+        <div class="stat-card">
+            <h3>20+</h3>
+            <p>Web3 Projects</p>
+        </div>
+        <div class="stat-card">
+            <h3>Content Creation</h3>
+            <p>Web3 Threads &amp; Posts</p>
+        </div>
+    </div>
+
+    <div class="wide-cards">
+        <div class="wide-card">
+            <span class="wide-label">Education</span>
+            <h3>Bachelor of Arts (B.A.)</h3>
+            <h4>Garbeta College, Vidyasagar University</h4>
+            <p>
+                Graduated in 2024. Alongside my degree I started working
+                in Web3 communities, learning community management,
+                moderation and content creation hands-on.
+            </p>
+        </div>
+        <div class="wide-card">
+            <span class="wide-label">Resume</span>
+            <h3>Suprio Ghosh &mdash; CV</h3>
+            <h4>Web3 Community Manager</h4>
+            <p>
+                One page with my experience, skills and education,
+                in the same style as this site.
+            </p>
+            <a class="wide-link" href="assets/resume/Suprio_Ghosh_Resume.pdf" target="_blank">Download Resume &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<section class="experience" id="experience">
     <div class="section-title">
-        <h2>Experience</h2>
-        <p>My Web3 Journey</p>
+        <h2>My Web3 <span class="script">journey</span></h2>
+        <p>Experience</p>
     </div>
 
     <div class="timeline">
-
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-
             <div class="timeline-content">
-                <span class="timeline-date">2023 – Present</span>
-
+                <span class="timeline-date">2023 &ndash; Present</span>
                 <h3>Web3 Community Manager</h3>
-
                 <h4>CryptoNexLabs</h4>
-
                 <p>
-                    Managing Web3 communities, moderating Discord & Telegram,
+                    Managing Web3 communities, moderating Discord &amp; Telegram,
                     creating educational content, supporting ambassador
                     campaigns and improving community engagement.
                 </p>
@@ -220,14 +217,10 @@ Hire Me
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-
             <div class="timeline-content">
                 <span class="timeline-date">Ambassador Programs</span>
-
                 <h3>Web3 Ambassador</h3>
-
                 <h4>Multiple Blockchain Projects</h4>
-
                 <p>
                     Participated in ambassador programs including Alchemy Pay,
                     Cronos, XION, Rootstock, Hedra, DoubleZero and other Web3 ecosystems.
@@ -237,132 +230,83 @@ Hire Me
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-
             <div class="timeline-content">
                 <span class="timeline-date">Content Creation</span>
-
                 <h3>Web3 Content Creator</h3>
-
-                <h4>X (Twitter) & Community Platforms</h4>
-
+                <h4>X (Twitter) &amp; Community Platforms</h4>
                 <p>
                     Created educational posts, Twitter threads, campaign content,
                     community updates and engagement strategies for Web3 audiences.
                 </p>
             </div>
         </div>
-
     </div>
-
 </section>
-<section id="education" class="education">
 
+<section class="skills" id="skills">
     <div class="section-title">
-        <h2>Education</h2>
-        <p>Academic Background</p>
-    </div>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-                <span class="timeline-date">2024</span>
-
-                <h3>Bachelor of Arts (B.A.)</h3>
-
-                <h4>Garbeta College, Vidyasagar University</h4>
-
-                <p>
-                    Graduated in 2024. Alongside my degree I started working
-                    in Web3 communities, learning community management,
-                    moderation and content creation hands-on.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-<section id="skills" class="skills">
-
-    <div class="section-title">
-        <h2>Skills</h2>
-        <p>Technologies & Expertise</p>
+        <h2>Skills &amp; <span class="script">expertise</span></h2>
+        <p>Technologies &amp; Expertise</p>
     </div>
 
     <div class="skills-grid">
-
         <div class="skill-card">
             <h3>Community Management <span class="skill-percent">95%</span></h3>
             <div class="skill-bar">
                 <div class="skill-fill" style="width:95%"></div>
             </div>
         </div>
-
         <div class="skill-card">
             <h3>Discord Moderation <span class="skill-percent">90%</span></h3>
             <div class="skill-bar">
                 <div class="skill-fill" style="width:90%"></div>
             </div>
         </div>
-
         <div class="skill-card">
             <h3>Telegram Management <span class="skill-percent">92%</span></h3>
             <div class="skill-bar">
                 <div class="skill-fill" style="width:92%"></div>
             </div>
         </div>
-
         <div class="skill-card">
             <h3>Content Creation <span class="skill-percent">90%</span></h3>
             <div class="skill-bar">
                 <div class="skill-fill" style="width:90%"></div>
             </div>
         </div>
-
         <div class="skill-card">
             <h3>Twitter (X) Growth <span class="skill-percent">88%</span></h3>
             <div class="skill-bar">
                 <div class="skill-fill" style="width:88%"></div>
             </div>
         </div>
-
         <div class="skill-card">
             <h3>Ambassador Campaigns <span class="skill-percent">90%</span></h3>
             <div class="skill-bar">
                 <div class="skill-fill" style="width:90%"></div>
             </div>
         </div>
-
     </div>
-
 </section>
-<!-- ================= Projects ================= -->
 
-<section id="projects" class="projects">
-
+<section class="projects" id="projects">
     <div class="section-title">
-        <h2>Projects</h2>
+        <h2>Featured <span class="script">work</span></h2>
         <p>Featured Work</p>
     </div>
 
     <div class="projects-grid">
-
         <div class="project-card">
             <h3>CryptoNexLabs Portfolio</h3>
             <p>
                 Personal portfolio website showcasing my Web3 community management,
                 moderation, ambassador programs and content creation experience.
             </p>
-
             <div class="project-tags">
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
             </div>
-
             <div class="project-buttons">
                 <a href="https://sgsuprio.github.io/suprio-portfolio/" class="project-btn" target="_blank">Live Demo</a>
                 <a href="https://github.com/Sgsuprio/suprio-portfolio" class="project-btn outline" target="_blank">GitHub</a>
@@ -375,13 +319,11 @@ Hire Me
                 Managed Discord and Telegram communities, organized AMAs,
                 supported ambassadors and improved community engagement.
             </p>
-
             <div class="project-tags">
                 <span>Discord</span>
                 <span>Telegram</span>
                 <span>Moderation</span>
             </div>
-
             <div class="project-buttons">
                 <a href="#experience" class="project-btn">Details</a>
             </div>
@@ -393,91 +335,66 @@ Hire Me
                 Created educational content, Twitter (X) threads,
                 campaign posts and growth strategies for blockchain projects.
             </p>
-
             <div class="project-tags">
                 <span>Content</span>
                 <span>X</span>
                 <span>Marketing</span>
             </div>
-
             <div class="project-buttons">
                 <a href="https://x.com/CryptoNexLabs" class="project-btn" target="_blank">View</a>
             </div>
         </div>
-
     </div>
-
 </section>
-<!-- ================= CONTACT ================= -->
 
-<section id="contact" class="contact">
+</div><!-- /dark-band -->
 
+<!-- ============ FOOTER / CONTACT with aurora ============ -->
+<footer class="site-footer" id="contact">
     <div class="section-title">
-        <h2>Contact Me</h2>
-        <p>Let's Build Something Together</p>
+        <h2>Contact <span class="script">me</span></h2>
+        <p>Let&rsquo;s Build Something Together</p>
     </div>
 
-    <div class="contact-container">
-
-<div class="contact-card">
-    <h3>Email</h3>
-    <p>sgsuprio@gmail.com</p>
-
-<a href="mailto:sgsuprio@gmail.com">
-    Send Email
-</a>
-</div>
-
+    <div class="contact-grid">
+        <div class="contact-card">
+            <h3>Email</h3>
+            <p>sgsuprio@gmail.com</p>
+            <a href="mailto:sgsuprio@gmail.com">Send Email</a>
+        </div>
         <div class="contact-card">
             <h3>X (Twitter)</h3>
             <p>@CryptoNexLabs</p>
             <a href="https://x.com/CryptoNexLabs" target="_blank">Open Profile</a>
         </div>
-
         <div class="contact-card">
             <h3>Telegram</h3>
             <p>@Suprio7319</p>
             <a href="https://t.me/Suprio7319" target="_blank">Message Me</a>
         </div>
-
-<div class="contact-card">
-    <h3>LinkedIn</h3>
-    <p>Suprio Ghosh</p>
-
-    <a href="https://www.linkedin.com/in/suprio-ghosh-05aa50192"
-       target="_blank">
-       View Profile
-    </a>
-</div>
-
+        <div class="contact-card">
+            <h3>LinkedIn</h3>
+            <p>Suprio Ghosh</p>
+            <a href="https://www.linkedin.com/in/suprio-ghosh-05aa50192" target="_blank">View Profile</a>
+        </div>
     </div>
 
-</section>
-<footer class="footer">
-
-    <h2>Suprio Ghosh</h2>
-
-    <p>Building Strong Web3 Communities</p>
-
-    <div class="footer-socials">
-
-        <a href="https://x.com/CryptoNexLabs" target="_blank">X</a>
-
-        <a href="https://github.com/Sgsuprio" target="_blank">GitHub</a>
-
-        <a href="https://t.me/Suprio7319" target="_blank">Telegram</a>
-
-        <a href="https://www.linkedin.com/in/suprio-ghosh-05aa50192" target="_blank">LinkedIn</a>
-
+    <div class="footer-bottom">
+        <h2>Suprio Ghosh</h2>
+        <p>Building Strong Web3 Communities</p>
+        <div class="footer-socials">
+            <a href="https://x.com/CryptoNexLabs" target="_blank">X</a>
+            <a href="https://github.com/Sgsuprio" target="_blank">GitHub</a>
+            <a href="https://t.me/Suprio7319" target="_blank">Telegram</a>
+            <a href="https://www.linkedin.com/in/suprio-ghosh-05aa50192" target="_blank">LinkedIn</a>
+        </div>
+        <p class="copyright">&copy; 2026 Suprio Ghosh. All Rights Reserved.</p>
     </div>
-
-    <p class="copyright">
-        © 2026 Suprio Ghosh. All Rights Reserved.
-    </p>
-
 </footer>
 
-<button id="backToTop" aria-label="Back to top">↑</button>
+</main>
+
+<button id="backToTop" aria-label="Back to top">&uarr;</button>
 
 </body>
 </html>
