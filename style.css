@@ -1060,3 +1060,38 @@ SKILLS
     }
 
 }
+/* ===========================
+   PORTFOLIO FIXES — 15 Nov 2026
+   (availability line, skill % labels,
+   tighter desktop section spacing)
+=========================== */
+
+.availability{
+    margin-top:18px;
+    color:#94a3b8;
+    font-size:16px;
+}
+
+.skill-card h3{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+}
+
+.skill-percent{
+    color:#3B82F6;
+    font-size:18px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+@media (min-width: 993px){
+    section{
+        padding-top:70px;
+        padding-bottom:70px;
+    }
+    .section-title{
+        margin-bottom:45px;
+    }
+}
