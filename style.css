@@ -249,8 +249,8 @@ section[id],footer[id]{scroll-margin-top:90px;}
     max-height:calc(100dvh - 30px);
     background:#111;
     z-index:1100;
-    transform:translateX(105%);
-    transition:transform .55s cubic-bezier(.22,1,.36,1);
+    transform:translateX(calc(100% + 40px));
+    transition:transform .55s cubic-bezier(.22,1,.36,1),visibility 0s linear .55s;
     padding:28px 40px 32px;
     display:flex;
     flex-direction:column;
@@ -258,8 +258,13 @@ section[id],footer[id]{scroll-margin-top:90px;}
     box-shadow:0 24px 60px rgba(0,0,0,.45);
     overflow-y:auto;
     will-change:transform;
+    visibility:hidden;
 }
-.menu-panel.open{transform:translateX(0);}
+.menu-panel.open{
+    transform:translateX(0);
+    visibility:visible;
+    transition:transform .55s cubic-bezier(.22,1,.36,1),visibility 0s;
+}
 
 .menu-panel-top{
     display:flex;
