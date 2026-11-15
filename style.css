@@ -673,6 +673,7 @@ section[id],footer[id]{scroll-margin-top:90px;}
     margin:0 auto;
 }
 .intro-text .w{
+    font-family:'Playfair Display',serif;
     color:#3A3A3A;
     transition:color .45s ease;
 }
