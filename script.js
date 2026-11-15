@@ -1,4 +1,49 @@
 // ===========================
+// Preloader: count 0 -> 100, then fade out
+// (CSS also fades it out on its own after 2.6s if JS fails)
+// ===========================
+(function () {
+    const preloader = document.querySelector("#preloader");
+    const countEl = document.querySelector("#preloaderCount");
+    if (!preloader || !countEl) return;
+    let count = 0;
+    const timer = setInterval(function () {
+        count += 1;
+        countEl.textContent = count + "%";
+        if (count >= 100) {
+            clearInterval(timer);
+            setTimeout(function () {
+                preloader.classList.add("done");
+                setTimeout(function () { preloader.remove(); }, 600);
+            }, 150);
+        }
+    }, 12);
+})();
+
+// ===========================
+// Header contact dropdown (Open to Work -> X / Telegram / Gmail)
+// ===========================
+const headerContact = document.querySelector("#headerContact");
+const contactBtn = document.querySelector("#contactBtn");
+
+function closeContactDropdown() {
+    if (!headerContact) return;
+    headerContact.classList.remove("open");
+    contactBtn.setAttribute("aria-expanded", "false");
+}
+
+if (contactBtn) {
+    contactBtn.onclick = function (e) {
+        e.stopPropagation();
+        const isOpen = headerContact.classList.toggle("open");
+        contactBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    };
+    document.addEventListener("click", function (e) {
+        if (headerContact && !headerContact.contains(e.target)) closeContactDropdown();
+    });
+}
+
+// ===========================
 // Slide-in menu panel
 // ===========================
 const menuBtn = document.querySelector("#menuBtn");
@@ -28,9 +73,12 @@ document.querySelectorAll(".menu-links a").forEach(link => {
     link.onclick = closeMenu;
 });
 
-// Close the menu with the Escape key
+// Close the menu and the contact dropdown with the Escape key
 document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeMenu();
+    if (e.key === "Escape") {
+        closeMenu();
+        closeContactDropdown();
+    }
 });
 
 // ===========================
