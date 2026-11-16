@@ -1,23 +1,53 @@
 // ===========================
-// Preloader: count 0 -> 100, then fade out
-// (CSS also fades it out on its own after 2.6s if JS fails)
+// Preloader: 0 -> 100 over ~2.2s (reference site pace), wordmark lights up
+// letter by letter, blue orb rotates into place, tagline fades in at 95%.
+// Count is driven by elapsed time (not tick count) so a throttled timer
+// jumps to the right number instead of crawling; a hard 3.5s fallback
+// finishes it no matter what. (CSS also fades it out on its own at 3.6s.)
 // ===========================
 (function () {
     const preloader = document.querySelector("#preloader");
     const countEl = document.querySelector("#preloaderCount");
+    const fillEl = document.querySelector("#preloaderFill");
+    const tagEl = document.querySelector("#preloaderTag");
+    const orbEl = document.querySelector("#preloaderOrb");
+    const letters = Array.prototype.slice.call(document.querySelectorAll("#preloaderWord .preloader-group span"));
     if (!preloader || !countEl) return;
-    let count = 0;
-    const timer = setInterval(function () {
-        count += 1;
-        countEl.textContent = count + "%";
-        if (count >= 100) {
-            clearInterval(timer);
-            setTimeout(function () {
-                preloader.classList.add("done");
-                setTimeout(function () { preloader.remove(); }, 600);
-            }, 150);
+    const DURATION = 2200; // ms to count 0 -> 100
+    const start = Date.now();
+    let finished = false;
+    function setCount(n) {
+        countEl.textContent = n + " %";
+        if (fillEl) fillEl.style.width = n + "%";
+        if (tagEl) tagEl.style.opacity = n >= 95 ? "1" : "0";
+        if (orbEl) {
+            const k = Math.min(n / 40, 1); // orb settles into place by 40%
+            const ang = -35 * (1 - k);
+            const x = -0.3 * (1 - k);
+            orbEl.style.transform = "rotate(" + ang + "deg) translateX(" + x + "em)";
         }
-    }, 12);
+        letters.forEach(function (el, i) {
+            // brighten left to right: letter i lights up across an 18-point
+            // window starting at i*3.5, so all are white by ~53%
+            const o = Math.max(0.12, Math.min(1, (n - i * 3.5) / 18));
+            el.style.opacity = o.toFixed(2);
+        });
+    }
+    function finish() {
+        if (finished) return;
+        finished = true;
+        setCount(100);
+        setTimeout(function () {
+            preloader.classList.add("done");
+            setTimeout(function () { preloader.remove(); }, 600);
+        }, 150);
+    }
+    setTimeout(finish, 3500); // hard fallback: never sit on a number
+    const timer = setInterval(function () {
+        const n = Math.min(100, Math.round((Date.now() - start) / DURATION * 100));
+        setCount(n);
+        if (n >= 100) { clearInterval(timer); finish(); }
+    }, 22);
 })();
 
 // ===========================
