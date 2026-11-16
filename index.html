@@ -13,7 +13,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://sgsuprio.github.io/suprio-portfolio/assets/profile/profile.jpg">
 
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600;700&family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:wght@700;800&family=Poppins:wght@600;700&family=JetBrains+Mono:wght@700&family=Bebas+Neue&family=DM+Serif+Display&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
@@ -22,11 +22,21 @@
 
 <body>
 
-<!-- Preloader: black screen with name + counter, fades out on load -->
+<!-- Preloader: black screen, wordmark lights up letter by letter, progress bar + counter (reference site style) -->
 <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader-inner">
-        <span class="preloader-name">Suprio Ghosh</span>
-        <span class="preloader-count" id="preloaderCount">0%</span>
+        <div class="preloader-center">
+            <div class="preloader-word" id="preloaderWord">
+                <span class="preloader-orb" id="preloaderOrb"><span class="preloader-orb-s">S</span></span>
+                <span class="preloader-group"><span>S</span><span>U</span><span>P</span><span>R</span><span>I</span><span>O</span></span>
+                <span class="preloader-group"><span>G</span><span>H</span><span>O</span><span>S</span><span>H</span></span>
+            </div>
+            <div class="preloader-tag" id="preloaderTag">- Web3 Community Manager Since <b>2022</b></div>
+        </div>
+        <div class="preloader-bottom">
+            <div class="preloader-bar"><span class="preloader-fill" id="preloaderFill"></span></div>
+            <span class="preloader-count" id="preloaderCount">0 %</span>
+        </div>
     </div>
 </div>
 <noscript><style>.preloader{display:none!important}</style></noscript>
